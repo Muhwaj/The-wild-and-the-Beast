@@ -1,7 +1,7 @@
 #A game about revenge, choices and survival 
 
 class Game:
-    def _init_(self):
+    def __init__(self):
         self.state = {
             'Helped_Twin_A': False,
             'Stay_with_Twins': False,
@@ -10,4 +10,55 @@ class Game:
             'Suspect2_Enemy': False,            
         }
     def clear_screen(self):
-        print("\n" * 50) # Simple way to clear the screen
+        print("\n" * 30) # Simple way to clear the screen  
+    
+    def display_text (self, text):
+        print ("\n" + "=" * 50)
+        print(text)
+        print("\n" + "=" * 50) # just making space and cleaning up the screen 
+        
+    def get_choice(self, choices):
+        for i, choice in enumerate(choices,1):
+            print (f"{i}. {choice}")
+        
+        while True: 
+            try: 
+                choice = int(input("Choose wisely:"))
+                if 1 <= choice <= len(choices):
+                    return choice
+                else: 
+                    print("The choice is unavailable. Try again")
+            except ValueError:
+                print("Enter a number please")
+#opening scene. Screen lights up in a way as in one opening their eyes. 
+#MC slowly opens eyes to see leaves on trees and sunshine pouring through.
+#MC gets up and looks around while narration is played. 
+    def opening(self):
+        self.clear_screen()
+        self.display_text("""
+
+You have been in the woods for 264 days.
+
+264 days since you have seen your family.
+264 days since you were banished from your home.
+
+264 days hunting for the beast.
+
+The forest is your prison. One you cannot escape. One you cannot leave until you have completed your challenge.
+
+The village elder's words echo in your mind:
+"Return with the heart of the beast, or do not return at all.
+
+You hate the forest. 
+It's damp moss covered paths that always snag on your boots, 
+Its huge trees that sometimes block out the sunlight,
+and most of all
+You hate that you have no idea where the beast that has haunted your village is hiding
+
+But today is different.
+because leading down a path you haven't yet explored, you've found tracks. Fresh ones.
+        """)
+        
+        
+        
+        
