@@ -59,6 +59,35 @@ But today is different.
 because leading down a path you haven't yet explored, you've found tracks. Fresh ones.
         """)
         
+        choices = [
+            "Follow the tracks...",
+            "Remember the trials...",
+            "Remember when you almost died..." #mught change this option later or take it out i have no idea 
+            
+        ]
+        
+        choices = self.get_choice(choices)
+        
+        if choices == 1:
+            self.get_attacked_by_wolves()
+        elif choices == 2:
+            self.flashback_trials()
+        elif choices == 3:
+            ############ flashback to something else maybe??
+        
+    def get_attacked_by_wolves(self):
+        self.clear_screen()
+        self.display_text("""
+                          
+You follow the tracks deeper into the forest. The air grows colder as you feel the hairs on your neck stand up. 
+You're close. You feel it. 
+ 
+You continue down the path, not daring to breathe. 
+For the first time you thank the moss that conceals the sound of your footsteps. 
+                          
+                          
+                          """)
+#########RAH I DONT WANNA WORK ON THIS FOR NOW I WANNA MAKE THE ARRTTTT okAY nvm lock in 
         
         
         
