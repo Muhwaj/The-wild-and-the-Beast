@@ -104,7 +104,7 @@ You close your eyes and wait for the imminent attack
 
                           
         """)
-#after the words "imminent attack" the screen should go dark and make it seem like the game ended
+#after the words "imminent attack" the screen should go dark and make it seem like the game ended but it doesn't because Renn save the day huzzah
 
 
 
@@ -122,9 +122,10 @@ You close your eyes and wait for the imminent attack
             
     def fight_together(self):
         self.clear_screen()
+        #fight with the wolves: choosing to help the twin version
         self.display_text ("""
                            
-THE FIGHT WITH THE VWOLVES- HELPING TWIN VERSION 
+HEREERHEHREHHEHERE
                            
                            
             """)
