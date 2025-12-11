@@ -102,6 +102,24 @@ Behind you is the ravine. In front of you...the wolves.
 This is the end... 
 You close your eyes and wait for the imminent attack 
 
+The sound of flesh tearing racked your ears. But that sound wasn't yours. You opened your eyes and...
+
+Someone was there. A stranger in worn leather, moving with impossible grace. A sword flashed. 
+
+You weren't going to die today you realised. Someone was helping you. 
+
+"RUN!" he shouted 
+
+The shout immediately knocked some sense into you. There were still too many wolves for one person to deal with. 
+The stranger would surely be injured if you didn't help. But you would definetly be killed if you did. 
+
+You looked towards the edge of the forest and saw a chance to escape. The wolves were distracted. 
+
+But when you looked back a wolf clamped down it's teeth stranger's leg. 
+He cried out in pain, stumbling to regain his footing.
+
+You had two options now...
+
                           
         """)
 #after the words "imminent attack" the screen should go dark and make it seem like the game ended but it doesn't because Renn save the day huzzah
@@ -109,8 +127,8 @@ You close your eyes and wait for the imminent attack
 
 
         choices = [
-            "Rush in to help fight"
-            "Stand back. You'll both die if you help"
+            "Rush in to help. He saved your life after all"
+            "Stand back and escape. You will die if you help"
         ]
         
         choices= self.get_choice(choices)
@@ -125,9 +143,31 @@ You close your eyes and wait for the imminent attack
         #fight with the wolves: choosing to help the twin version
         self.display_text ("""
                            
-HEREERHEHREHHEHERE
-                           
-                           
+You pick up your weapon and gather your courage as you charge into battle. 
+
+Your training for the trials kick in as you calm your beating heart and shaky hands. 
+
+You attack one wolf with your dagger. Another with your sword. You're winning. The pack is moving back. 
+
+The stranger looks at you with surprised but is pleased. 
+
+"Duck!" he yells as you drop low and he slashes the tendons of the wolf that would have definietely killed you. 
+
+As the last wolf disappears, the stranger collapses, breathing hard. 
+
+"Thank you," he gasps, clutching his injured leg. Blood seeps between his fingers. "I was going to...just thanks"
+
+You nod in acknowledgment, too busy catching your breath to form a proper reply. 
+
+Up close he looks around your age, with short dark hair and sharp features. A huge scar runs from his right ear down his face towards his chin. 
+Wonder how that happened....
+
+"Can you walk?" you ask.
+
+He tries to stand but immediately stumbles. 
+
+"Guess not then". You wrap his wound with a spare cloth to stop the bleeding and support his weight as you start walking....
+        
             """)
         
         input("\nPress enter to continue...")
@@ -136,7 +176,31 @@ HEREERHEHREHHEHERE
     def stand_back(self):
         self.clear_screen()
         self.display_text("""
-    DONT HELP THE TWIN AND JUST WATCH THEM GET HURT LOLOLOL
+You freeze. Every instinct screams at you to help, but another firmer more logical voice that sounds awfully like your father says:
+Don't. You'll get killed.. Always put your survival above others. No matter what it takes. 
+
+The stranger sees you standing there and your eyes meet. He seems to understand. 
+
+"Smart", he grunts, and then hes moving again. Injured, desperate and fighting with the fury of someone who's not used to losing. 
+
+"Get out of the way!" he yells and then you're running. Running towards your freedom. 
+
+The stranger tricks the wolves to leap towards the ravine, drowning them all. 
+
+By the time each wolf is either dead or drowned, the stranger is barely standing. 
+
+He collapses against a tree, breathing hard. Bloodstreaming from his leg. Too much blood. 
+
+"Well", he says with a bitter laugh, examining his leg "at least one of us will live"
+
+A mixture of shame and anger burn your chest. 
+
+"I would have died if I helped", you manage
+
+"You're right. I don't blame you that you didn't". He tries to stand and fails. "But are you willing to help now?"
+
+"How do I know you won't kill me if I step closer?" you say but you're already grabbing spare cloth to bandage his leg. 
+
            
                           
                           """)
@@ -150,7 +214,4 @@ HEREERHEHREHHEHERE
                           
     JOURNEY TO TREEHOUSE. INTRODUCTION TO RENN'S PERSONALITY
                           """)
-        
-        
-        
         
