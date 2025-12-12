@@ -1,11 +1,53 @@
 #A game about revenge, choices and survival 
 
+#Balancing storytelling and player choice 
+#it's actually so much bigger than i thought lol
+# i need to lock in 
+#how do i draw what do i draw? 
+#incomplete information and your decisions change the stuff 
+#maybe add a little animation lol
+#figure out how to use RenPy
+#wait hold on a name like "The Beast Remembers"
+#okay so name ideas are: 
+# The Wild and the Beast
+# The Beast Remembers
+# Slay the Beast...or Not 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 class Game:
     def __init__(self):
         self.state = {
             'Helped_Twin_A': False,
             'Stay_with_Twins': False,
-            'Knows_about_other_villages': False,
             'Suspect1_Friend': False,
             'Suspect2_Enemy': False,            
         }
@@ -33,8 +75,7 @@ class Game:
                 
                 
 #opening scene. Screen lights up in a way as in one opening their eyes. 
-#MC slowly opens eyes to see leaves on trees and sunshine pouring through.
-#MC gets up and looks around while narration is played. 
+#writing appears on the screen and little illustrations. the following text is displayed 
 
     def opening(self):
         self.clear_screen()
@@ -124,8 +165,6 @@ You had two options now...
         """)
 #after the words "imminent attack" the screen should go dark and make it seem like the game ended but it doesn't because Renn save the day huzzah
 
-
-
         choices = [
             "Rush in to help. He saved your life after all"
             "Stand back and escape. You will die if you help"
@@ -147,27 +186,26 @@ You pick up your weapon and gather your courage as you charge into battle.
 
 Your training for the trials kick in as you calm your beating heart and shaky hands. 
 
-You attack one wolf with your dagger. Another with your sword. You're winning. The pack is moving back. 
+You attack one wolf with your dagger. Another with your sword. The pack is moving back. 
 
 The stranger looks at you with surprised but is pleased. 
 
-"Duck!" he yells as you drop low and he slashes the tendons of the wolf that would have definietely killed you. 
+"Behind you!" he yells but you react too late.
 
-As the last wolf disappears, the stranger collapses, breathing hard. 
+Sharp, blinding pain shoots through your shoulder. Your vision goes white and your head hits the ground. 
 
-"Thank you," he gasps, clutching his injured leg. Blood seeps between his fingers. "I was going to...just thanks"
+The wolf with its teeth in your shoulder drags you closer, intending to rip you apart. Another one grabs your leg. 
 
-You nod in acknowledgment, too busy catching your breath to form a proper reply. 
+You're going to die. "You should have stayed back", your father voice echoes. Maybe you should have. 
 
-Up close he looks around your age, with short dark hair and sharp features. A huge scar runs from his right ear down his face towards his chin. 
-Wonder how that happened....
+You lock eyes with the stranger. At least you did some good before you died. 
 
-"Can you walk?" you ask.
+The pain is blinding, searing through your body. You're losing blood faster than you can fight back. 
 
-He tries to stand but immediately stumbles. 
+Your head collides with a sharp piece of rock and your vision goes black. 
 
-"Guess not then". You wrap his wound with a spare cloth to stop the bleeding and support his weight as you start walking....
-        
+A small mercy. 
+
             """)
         
         input("\nPress enter to continue...")
@@ -176,8 +214,9 @@ He tries to stand but immediately stumbles.
     def stand_back(self):
         self.clear_screen()
         self.display_text("""
+                          
 You freeze. Every instinct screams at you to help, but another firmer more logical voice that sounds awfully like your father says:
-Don't. You'll get killed.. Always put your survival above others. No matter what it takes. 
+Don't. Always put your survival above others. No matter what it takes. 
 
 The stranger sees you standing there and your eyes meet. He seems to understand. 
 
@@ -185,26 +224,23 @@ The stranger sees you standing there and your eyes meet. He seems to understand.
 
 "Get out of the way!" he yells and then you're running. Running towards your freedom. 
 
-The stranger tricks the wolves to leap towards the ravine, drowning them all. 
-
-By the time each wolf is either dead or drowned, the stranger is barely standing. 
-
-He collapses against a tree, breathing hard. Bloodstreaming from his leg. Too much blood. 
-
-"Well", he says with a bitter laugh, examining his leg "at least one of us will live"
-
-A mixture of shame and anger burn your chest. 
-
-"I would have died if I helped", you manage
-
-"You're right. I don't blame you that you didn't". He tries to stand and fails. "But are you willing to help now?"
-
-"How do I know you won't kill me if I step closer?" you say but you're already grabbing spare cloth to bandage his leg. 
-
-           
+You're almost there when you hear a scream. You turn to see that wolves have grabbed his shoulder and leg. Theyre going to rip him apart. 
+    
+        """)
+        
+        
+        input("\n Press Enter to continue...")
+        self.twin_saving_you()
+        
+    def twin_saving_you(self):
+        self.clear_screen()
+        self.display_text(""" 
                           
+    Uh he saves you and takes you back the treehouse basically yeah. 
                           """)
         
+        
+     
         input("\n Press Enter to continue...")
         self.journey_to_treehouse()
         
@@ -213,5 +249,4 @@ A mixture of shame and anger burn your chest.
         self.display_text(""" 
                           
     JOURNEY TO TREEHOUSE. INTRODUCTION TO RENN'S PERSONALITY
-                          """)
-        
+                          """)         
