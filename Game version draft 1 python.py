@@ -18,35 +18,11 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 class Game:
     def __init__(self):
         self.state = {
             'Helped_Twin_A': False,
+            'did_not_help_twin': False,
             'Stay_with_Twins': False,
             'Suspect1_Friend': False,
             'Suspect2_Enemy': False,            
@@ -188,7 +164,7 @@ Your training for the trials kick in as you calm your beating heart and shaky ha
 
 You attack one wolf with your dagger. Another with your sword. The pack is moving back. 
 
-The stranger looks at you with surprised but is pleased. 
+The stranger looks at you with surprise but is pleased. 
 
 "Behind you!" he yells but you react too late.
 
@@ -224,21 +200,55 @@ The stranger sees you standing there and your eyes meet. He seems to understand.
 
 "Get out of the way!" he yells and then you're running. Running towards your freedom. 
 
-You're almost there when you hear a scream. You turn to see that wolves have grabbed his shoulder and leg. Theyre going to rip him apart. 
+You're almost there when you hear a scream. 
+
+You turn to see that wolves have grabbed his shoulder and leg. Theyre going to rip him apart. 
     
         """)
         
         
-        input("\n Press Enter to continue...")
-        self.twin_saving_you()
+
         
-    def twin_saving_you(self):
+        choices = [
+            "Keep running. Take your freedom while you still have it"
+            "Go back and help. He saved your life didn't he?"
+        ]
+        
+        choices= self.get_choice(choices)
+        
+        if choices == 1 :
+            self.state ['did_not_help_twin'] = True
+        else:
+            self.state ['did_not_help_twin'] = False
+         
+        input("\n Press Enter to continue...")
+        self.save_twin_or_no()
+        
+    def save_twin_or_no(self):
         self.clear_screen()
         self.display_text(""" 
                           
-    Uh he saves you and takes you back the treehouse basically yeah. 
-                          """)
+        Go back and save twin lol. You're gonna get badly hurt lol. 
+        Basically pass out and be incapabale for weeks.
+        Very much delaying your time for finding the beast so sad. very inconveneient. 
+        twin b doesn't like you btw. she hatesss your guts but you saved twin a's life so she simply has to deal with it.
+        if twin a dies tho it will be a very dark character arc i dont know if i can write that 
+                          
+
+                          """)    
+            
+            
+        input("\n Press Enter to continue...")
+        self.save_twin_or_no()
         
+    def save_twin_or_no(self):
+        self.clear_screen()
+        self.display_text("""   
+                          
+           did not save twin lol
+           btw if you don't save twin A twin B will find you instead and you'll become friends but they will find out that you left the twinnnnn with the wolves and will want revenge               
+                          """)  
+            
         
      
         input("\n Press Enter to continue...")
@@ -250,3 +260,11 @@ You're almost there when you hear a scream. You turn to see that wolves have gra
                           
     JOURNEY TO TREEHOUSE. INTRODUCTION TO RENN'S PERSONALITY
                           """)         
+        
+ 
+ 
+#define revenge_arc for twin B orrrr also add a reconcilaiton option ?
+#define define fighting the beast or not option
+#fight_beast: ignore his bullshit, kill him, take his heart, return to village. you will not become the beast like him
+#dont_fight_beast: you listen to his amazing wisdom, decide to never go back, build a community with him instead. huzzah       
+    
