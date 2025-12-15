@@ -1,26 +1,36 @@
 #A game about revenge, choices and survival 
 
-#Balancing storytelling and player choice 
-#it's actually so much bigger than i thought lol
-# i need to lock in 
-#how do i draw what do i draw? 
-#incomplete information and your decisions change the stuff 
-#maybe add a little animation lol
-#figure out how to use RenPy
-#wait hold on a name like "The Beast Remembers"
 #okay so name ideas are: 
 # The Wild and the Beast
 # The Beast Remembers
 # Slay the Beast...or Not 
 
+#DIALOGUE NEEDS A LOT OF PROOF READING I DONT KNOW WHAT IM WRITING RAHHHHH
 
+#I STILL NEED TO WRITE THE CODE FOR THE TRIALS OMG 😭 
+
+
+#I should define all the functions im using their uses so i dont forget lol
+
+#Helped_Twin_A
+#did_not_help_twin
+#stay_with_twins
+#Suspect1_Friend
+#Suspect2_Enemy 
+
+#opening
+#get_attacked_by_wolves
+#flashback_trials
+#fight_together
+#journey_to_treehouse
+#stand_back
 
 
 
 
 class Game:
     def __init__(self):
-        self.state = {
+        self.state = {  #dictionary to remember choices
             'Helped_Twin_A': False,
             'did_not_help_twin': False,
             'Stay_with_Twins': False,
@@ -31,13 +41,13 @@ class Game:
         print("\n" * 30) # Simple way to clear the screen  
     
     def display_text (self, text):
-        print ("\n" + "=" * 50)
+        print ("\n" + "=" * 50) #prints a seperation line
         print(text)
-        print("\n" + "=" * 50) # just making space and cleaning up the screen 
+        print("\n" + "=" * 50)  
         
     def get_choice(self, choices):
-        for i, choice in enumerate(choices,1):
-            print (f"{i}. {choice}")
+        for x, choice in enumerate(choices, 1): #start counting from 1
+            print (f"{x}. {choice}") #print whatever is in x and whatever is in choice
         
         while True: 
             try: 
@@ -79,19 +89,17 @@ But today is different.
 because leading down a path you haven't yet explored, you've found tracks. Fresh ones.
         """)
         
-        choices = [
+        choice = self.get_choice ([
             "Follow the tracks...",
             "Remember the trials...",
-        ]
+        ])
         
-        choices = self.get_choice(choices)
-        
-        if choices == 1:
+        if choice == 1:
             self.get_attacked_by_wolves()
-        elif choices == 2:
+        else:
             self.flashback_trials()
         
-        
+#-----------------WOLVES---------------------        
     def get_attacked_by_wolves(self):
         self.clear_screen()
         self.display_text("""
@@ -141,17 +149,17 @@ You had two options now...
         """)
 #after the words "imminent attack" the screen should go dark and make it seem like the game ended but it doesn't because Renn save the day huzzah
 
-        choices = [
+        choice = self.get_choice([
             "Rush in to help. He saved your life after all"
             "Stand back and escape. You will die if you help"
-        ]
+        ])
         
-        choices= self.get_choice(choices)
         
-        if choices == 1 :
+        if choice == 1 :
             self.state ['Helped_Twin_A'] = True
+            self.fight_together() 
         else:
-            self.state ['Helped_Twin_A'] = False
+            self.stand_back()
             
     def fight_together(self):
         self.clear_screen()
@@ -185,10 +193,11 @@ A small mercy.
             """)
         
         input("\nPress enter to continue...")
-        self.journey_to_treehouse()
+        self.journey_to_treehouse() #prolly need to change that 
         
     def stand_back(self):
         self.clear_screen()
+        #fight with the wolves but saving the twin version instead 
         self.display_text("""
                           
 You freeze. Every instinct screams at you to help, but another firmer more logical voice that sounds awfully like your father says:
@@ -207,46 +216,77 @@ You turn to see that wolves have grabbed his shoulder and leg. Theyre going to r
         """)
         
         
-
-        
-        choices = [
+        choices = self.get_choice([
             "Keep running. Take your freedom while you still have it"
-            "Go back and help. He saved your life didn't he?"
-        ]
+            "Go back and help. He saved your life, didn't he?"
+        ])
         
-        choices= self.get_choice(choices)
         
         if choices == 1 :
             self.state ['did_not_help_twin'] = True
+            self.did_not_save_twin() 
         else:
-            self.state ['did_not_help_twin'] = False
+            self.state ['did_not_help_twin'] = True
+            self.save_twin() 
          
-        input("\n Press Enter to continue...")
-        self.save_twin_or_no()
         
-    def save_twin_or_no(self):
+    def save_twin(self):
         self.clear_screen()
+        #go back and save stranger version
         self.display_text(""" 
                           
-        Go back and save twin lol. You're gonna get badly hurt lol. 
-        Basically pass out and be incapabale for weeks.
-        Very much delaying your time for finding the beast so sad. very inconveneient. 
-        twin b doesn't like you btw. she hatesss your guts but you saved twin a's life so she simply has to deal with it.
-        if twin a dies tho it will be a very dark character arc i dont know if i can write that 
-                          
+Your conscience wars with your practicality. 
+        
+Choosing to go back could get you killed but leaving will definetely get him killed. 
+        
+You pick up your weapon and charge towards the wolves, intending to distract them long enough for the stranger to get back up. 
+        
+You manage to injure the wolves holding by flinging your dagger. The stranger looks at you gratefully and manages to crawl towards a safer distance. 
 
+He leans on a tree but gets back, intending to finish this fight with you. Injured or not. 
+
+For a moment his eyes meet yours, expressing gratitude and respect but they suddenly change to fear. 
+
+"Behind you!" he yells but you react too late.
+
+Sharp, blinding pain shoots through your shoulder. Your vision goes white and your head hits the ground. 
+
+The wolf with its teeth in your shoulder drags you closer, intending to rip you apart. Another one grabs your leg. 
+
+You're going to die. "You should have stayed back", your father voice echoes. Maybe you should have. 
+
+You lock eyes with the stranger. At least you did some good before you died. 
+
+The pain is blinding, searing through your body. You're losing blood faster than you can fight back. 
+
+Your head collides with a sharp piece of rock and your vision goes black.            
+                        
                           """)    
+        
+#Go back and save twin lol. You're gonna get badly hurt lol. 
+#Basically pass out and be incapabale for weeks.
+#Very much delaying your time for finding the beast so sad. very inconveneient. 
+#twin b doesn't like you btw. she hatesss your guts but you saved twin a's life so she simply has to deal with it.
+#if twin a dies tho it will be a very dark character arc i dont know if i can write that        
             
             
         input("\n Press Enter to continue...")
-        self.save_twin_or_no()
+        self.journey_to_treehouse()
         
-    def save_twin_or_no(self):
+    def did_not_save_twin(self):
         self.clear_screen()
         self.display_text("""   
-                          
-           did not save twin lol
-           btw if you don't save twin A twin B will find you instead and you'll become friends but they will find out that you left the twinnnnn with the wolves and will want revenge               
+                        
+It's too risky to go back. It's too risky to save him. There are too many wolves and even if you interfered now you'd be out of commission. 
+
+You take a deep breath and run away. 
+
+Screams. Screams of pure human agony as the wolves are tear the stranger apart. Limb for limb.
+
+Still you don't turn back. You can't.      
+           
+           
+                   
                           """)  
             
         
@@ -266,5 +306,20 @@ You turn to see that wolves have grabbed his shoulder and leg. Theyre going to r
 #define revenge_arc for twin B orrrr also add a reconcilaiton option ?
 #define define fighting the beast or not option
 #fight_beast: ignore his bullshit, kill him, take his heart, return to village. you will not become the beast like him
-#dont_fight_beast: you listen to his amazing wisdom, decide to never go back, build a community with him instead. huzzah       
+#dont_fight_beast: you listen to his amazing wisdom, decide to never go back, build a community with him instead. huzzah 
+
+def flashback_trials(self):
+    self.clear_screen()
+    self.display_text ("""
+                       flash back to trials
+                       """)
+    input("\n Press Enter to return")
+    self.opening()
+    
+    
+    game = Game()
+    game.opening()  
+    
+ 
+ 
     
