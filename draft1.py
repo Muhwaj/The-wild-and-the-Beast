@@ -300,6 +300,20 @@ Still you don't turn back. You can't.
                           
     JOURNEY TO TREEHOUSE. INTRODUCTION TO RENN'S PERSONALITY
     
+The treehouse is remarkable. Built high in an ancient oak, with rope bridges connecting to other trees. 
+
+A figure drops from above, landing in a crouch. She looks like Renn. The same sharp features, same dark hair, but where Renns's eyes held warmth, hers are cold.
+
+"Renn, you're bleeding—" she stops when he sees you. Her hand moves to the knife at her belt. "Who is this?"
+
+"Kira, wait. They {PLAYER NAME} helped me, I was ambushed—"
+
+"So you brought a stranger to our home?" Kira's voice is sharp. "What were you thinking?"
+
+"They're alone. Banished. Like us."
+
+Kira studies you with open hostility. "Why?"
+    
     
                           """)         
         
@@ -327,6 +341,5 @@ def flashback_trials(self):
     
     
     game = Game()
-    game.opening()  
-    
+    game.opening()   
  
