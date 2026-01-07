@@ -47,8 +47,8 @@ class Game:
         
     def get_choice(self, choices):
         for x, choice in enumerate(choices, 1): #start counting from 1
-            print (f"{x}. {choice}") #print whatever is in x and whatever is in choice
-        
+            print (f"{x}. {choice}") 
+            
         while True: 
             try: 
                 choice = int(input("\nChoose wisely:" ))
@@ -193,11 +193,11 @@ A small mercy.
             """)
         
         input("\nPress enter to continue...")
-        self.journey_to_treehouse() #prolly need to change that 
+        self.journey_to_treehouse() #nah its fine. meeting twin 2 will have a different function prolly
         
     def stand_back(self):
         self.clear_screen()
-        #fight with the wolves but saving the twin version instead 
+        #fight with the wolves but you don't move
         self.display_text("""
                           
 You freeze. Every instinct screams at you to help, but another firmer more logical voice that sounds awfully like your father says:
@@ -226,7 +226,7 @@ You turn to see that wolves have grabbed his shoulder and leg. Theyre going to r
             self.state ['did_not_help_twin'] = True
             self.did_not_save_twin() 
         else:
-            self.state ['did_not_help_twin'] = True
+            self.state ['helped_twin_A'] = True
             self.save_twin() 
          
         
@@ -241,9 +241,9 @@ Choosing to go back could get you killed but leaving will definetely get him kil
         
 You pick up your weapon and charge towards the wolves, intending to distract them long enough for the stranger to get back up. 
         
-You manage to injure the wolves holding by flinging your dagger. The stranger looks at you gratefully and manages to crawl towards a safer distance. 
+You manage to injure the wolf holding him by flinging your dagger. The stranger looks at you gratefully and manages to crawl towards a safer distance. 
 
-He leans on a tree but gets back, intending to finish this fight with you. Injured or not. 
+He leans on a tree but gets back up, intending to finish this fight with you.
 
 For a moment his eyes meet yours, expressing gratitude and respect but they suddenly change to fear. 
 
@@ -277,51 +277,52 @@ Your head collides with a sharp piece of rock and your vision goes black.
         self.clear_screen()
         self.display_text("""   
                         
-It's too risky to go back. It's too risky to save him. There are too many wolves and even if you interfered now you'd be out of commission. 
-
+It's too risky to go back. It's too risky to save him. There are too many wolves and even if you interfered now you won't be able to save him and get out alive.
 You take a deep breath and run away. 
 
 Screams. Screams of pure human agony as the wolves are tear the stranger apart. Limb for limb.
 
 Still you don't turn back. You can't.      
-           
-           
                    
                           """)  
             
-        
-     
         input("\n Press Enter to continue...")
-        self.journey_to_treehouse()
+        self.twin_dies()
         
-    def journey_to_treehouse(self):
+    def twin_dies(self):
         self.clear_screen()
         self.display_text(""" 
                           
-    JOURNEY TO TREEHOUSE. INTRODUCTION TO RENN'S PERSONALITY
-    
-The treehouse is remarkable. Built high in an ancient oak, with rope bridges connecting to other trees. 
+You continue through the forest alone.
 
-A figure drops from above, landing in a crouch. She looks like Renn. The same sharp features, same dark hair, but where Renns's eyes held warmth, hers are cold.
+The stranger's screams haunt your dreams. You tell yourself it was the right choice. Survival above all else. 
 
-"Renn, you're bleeding—" she stops when he sees you. Her hand moves to the knife at her belt. "Who is this?"
+That's what your father always said.
 
-"Kira, wait. They {PLAYER NAME} helped me, I was ambushed—"
+But deep down, you wish you'd gone back. 
 
-"So you brought a stranger to our home?" Kira's voice is sharp. "What were you thinking?"
+You're alone. You're tired. And you're angry. 
 
-"They're alone. Banished. Like us."
+What good is your life above his? 200 days later you still have not found the beast
 
-Kira studies you with open hostility. "Why?"
-    
-    
+you're different now. Harder. Colder. More alone than ever.
+
+Someone who would give up the lives of anybody to save your own. Your father would be proud. 
+
+You've become the hardened he'd always wished for you to be. 
+
+You wonder if you can ever face your family again...
                           """)         
         
-        input("\nPress Enter to continue...")
-        # NEED TO CONTINUE 
-        print("\n[Story continues... ]")
-        self.opening()
-    
+#STILL NEED TO ADD A BEAST MONTAGE. PLAYER FINDS BEAST. TWO OPTIONS
+# KILL BEAST BECAUSE DUH 
+# LIVE WITH BEAST BECAUSE GUILT IS EATING YOU ALIVE 
+
+        def journey_to_treehouse(self):
+        self.clear_screen()
+        self.display_text(""" 
+                          
+                          """)
 
         
  
@@ -331,13 +332,7 @@ Kira studies you with open hostility. "Why?"
 #fight_beast: ignore his bullshit, kill him, take his heart, return to village. you will not become the beast like him
 #dont_fight_beast: you listen to his amazing wisdom, decide to never go back, build a community with him instead. huzzah 
 
-def flashback_trials(self):
-    self.clear_screen()
-    self.display_text ("""
-                       flash back to trials
-                       """)
-    input("\n Press Enter to return")
-    self.opening()
+
     
     
     game = Game()
