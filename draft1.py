@@ -3,34 +3,14 @@
 #okay so name ideas are: 
 # The Wild and the Beast
 # The Beast Remembers
-# Slay the Beast...or Not 
 
 #DIALOGUE NEEDS A LOT OF PROOF READING I DONT KNOW WHAT IM WRITING 
 
-#I STILL NEED TO WRITE THE CODE FOR THE TRIALS OMG 😭 
-
-
-#I should define all the functions im using their uses so i dont forget lol
-
-#Helped_Twin_A
-#did_not_help_twin
-#stay_with_twins
-#Suspect1_Friend
-#Suspect2_Enemy 
-
-#opening
-#get_attacked_by_wolves
-#flashback_trials
-#fight_together
-#journey_to_treehouse
-#stand_back
-
-
-
+#Lord these errors are testing me 
 
 class Game:
     def __init__(self):
-        self.state = {  #dictionary to remember choices
+        self.state = {  
             'Helped_Twin_A': False,
             'did_not_help_twin': False,
             'Stay_with_Twins': False,
@@ -150,7 +130,7 @@ You had two options now...
 #after the words "imminent attack" the screen should go dark and make it seem like the game ended but it doesn't because Renn save the day huzzah
 
         choice = self.get_choice([
-            "Rush in to help. He saved your life after all"
+            "Rush in to help. He saved your life after all",
             "Stand back and escape. You will die if you help"
         ])
         
@@ -193,7 +173,7 @@ A small mercy.
             """)
         
         input("\nPress enter to continue...")
-        self.journey_to_treehouse() #nah its fine. meeting twin 2 will have a different function prolly
+        self.journey_to_treehouse() #nah its fine. meeting twin 2 will have a different function HOPEFULLY-
         
     def stand_back(self):
         self.clear_screen()
@@ -213,16 +193,16 @@ You're almost there when you hear a scream.
 
 You turn to see that wolves have grabbed his shoulder and leg. Theyre going to rip him apart. 
     
-        """)
+        """) 
         
         
-        choices = self.get_choice([
-            "Keep running. Take your freedom while you still have it"
+        choice = self.get_choice([
+            "Keep running. Take your freedom while you still have it",
             "Go back and help. He saved your life, didn't he?"
         ])
         
         
-        if choices == 1 :
+        if choice == 1 :
             self.state ['did_not_help_twin'] = True
             self.did_not_save_twin() 
         else:
@@ -317,24 +297,40 @@ You wonder if you can ever face your family again...
 #STILL NEED TO ADD A BEAST MONTAGE. PLAYER FINDS BEAST. TWO OPTIONS
 # KILL BEAST BECAUSE DUH 
 # LIVE WITH BEAST BECAUSE GUILT IS EATING YOU ALIVE 
+                
+        input("\nPress Enter to restart...")
+        self.__init__()
+        self.start()
 
-        def journey_to_treehouse(self):
+    def journey_to_treehouse(self):
         self.clear_screen()
         self.display_text(""" 
-                          
-                          """)
+
+        """)
 
         
  
+ #no revenge arc for twin B instead MC never meets them and is riddled with guilt for letting Twin A die alone
+ #so when the beast is found the option of choosing to kill him or not has more weight yk
+ #because if you kill the beast it's because youve been haunted by the past for too long and changing wont fix anything
+ #but if you decide not then yk you can start a whole revolutionary arc ygwim 
  
-#define revenge_arc for twin B orrrr also add a reconcilaiton option ?
+ 
 #define define fighting the beast or not option
 #fight_beast: ignore his bullshit, kill him, take his heart, return to village. you will not become the beast like him
 #dont_fight_beast: you listen to his amazing wisdom, decide to never go back, build a community with him instead. huzzah 
 
 
     
-    
+    def start(self):
+        print("\n" + "="*30)
+        print("NAME TO BE DECIDED ")
+        print("A game about revenge, choices, and survival")
+        print("="*30)
+        input("\nPress Enter to begin...")
+        self.opening()
+
+
+if __name__ == "__main__":
     game = Game()
-    game.opening()   
- 
+    game.start()
