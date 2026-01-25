@@ -258,11 +258,14 @@ Your head collides with a sharp piece of rock and your vision goes black.
         self.display_text("""   
                         
 It's too risky to go back. It's too risky to save him. There are too many wolves and even if you interfered now you won't be able to save him and get out alive.
+
 You take a deep breath and run away. 
 
 Screams. Screams of pure human agony as the wolves are tear the stranger apart. Limb for limb.
 
-Still you don't turn back. You can't.      
+Still you don't turn back. You can't. 
+
+You run as far as your legs can take you. The screaming has long since ceased yet it still echoes in your brain. It will haunt you forever. 
                    
                           """)  
             
@@ -283,20 +286,22 @@ But deep down, you wish you'd gone back.
 
 You're alone. You're tired. And you're angry. 
 
-What good is your life above his? 200 days later you still have not found the beast
+What good is your life above his?
 
-you're different now. Harder. Colder. More alone than ever.
+200 days later you still have not found the beast
 
-Someone who would give up the lives of anybody to save your own. Your father would be proud. 
+You are different now. Harder. Colder. More alone than ever. Someone who would give up the life of anybody to save your own. 
 
-You've become the hardened he'd always wished for you to be. 
+Your father would be proud. 
+
+You've become the hardened soldier he'd always wished for you to be. 
 
 You wonder if you can ever face your family again...
                           """)         
         
-#STILL NEED TO ADD A BEAST MONTAGE. PLAYER FINDS BEAST. TWO OPTIONS
-# KILL BEAST BECAUSE DUH 
-# LIVE WITH BEAST BECAUSE GUILT IS EATING YOU ALIVE 
+# STILL NEED TO ADD A BEAST MONTAGE. PLAYER FINDS BEAST. TWO OPTIONS
+# KILL BEAST 
+# LIVE WITH BEAST 
                 
         input("\nPress Enter to restart...")
         self.__init__()
@@ -305,9 +310,209 @@ You wonder if you can ever face your family again...
     def journey_to_treehouse(self):
         self.clear_screen()
         self.display_text(""" 
+                          
+Pain.
 
+Throbbing, searing, all-consuming pain.
+
+Your shoulder feels like it's on fire. Your leg throbs with every heartbeat. Even breathing hurts.
+
+You try to remember. The wolves. The stranger. Fighting. Teeth. Claws. Blood.
+
+Darkness.
+
+You should be dead.
+
+Slowly, you force your eyes open. Everything is blurry at first. 
+
+Wooden walls. Rope. Sunlight filtering through gaps.
+
+You have absolutely no clue where you are. 
+
+"You're awake."
+
+The stranger. The stranger you risked your life to save. The very same stranger now eyeing you with concern and relief. 
+
+He's sitting nearby, his leg bandaged.
+
+"How are you feeling?" he asks, voice warm despite his obvious exhaustion. 
+
+Exhausted. Frustrated. Confused. You try to reply but your throat is dry as a bone. 
+
+Despite his injury, he moves swiftly to provide you with a flask of water. 
+
+You gulp down the fresh, sweet water as if its your first time drinking. He patiently waits for you to finish to introduce himself
+
+"I'm Renn, by the way" he pauses as if expecting your name in return but you simply stare back. Who is this guy? 
+
+He continued, undettered "I- I wanted to thank you for saving my life. You could have saved yourself but you chose to fight beside me instead." 
+
+"That's a debt I can never repay". The idea of someone's life being indebted to you made your already throbbing head start pounding. 
+
+You still cannot form the words nor the coherent thoughts to have a conversation. 
+
+He seem to understand and gestures towards your shoulder, wrapped in clean bandages. "You've been out for five days. We weren't sure you'd make it."
+                          
         """)
+        input("\nPress Enter to continue...")
+        self.talk_with_renn()
 
+def talk_with_renn(self):
+#REVIEW ALL OPTION CHOICES AND DIALOGUE THANK YOU 
+    asked_questions = {
+        'where': False,
+        'how_here': False,
+        'how_long': False,
+        'who_are_you': False
+    }
+    
+    while True:
+        self.clear_screen()
+        print("\n" + "="*30)
+        print("Renn sits nearby, watching you with concern.")
+        print("="*30 + "\n")
+        
+        
+        choices = []
+        
+        if not asked_questions['where']:
+            choices.append(("Where am I?", 'where'))
+        
+        if not asked_questions['how_here']:
+            choices.append(("How am I here", 'why_save'))
+        
+        if not asked_questions['how_long']:
+            choices.append(("Five days? I've been out for five days???", 'how_long'))
+        
+        if not asked_questions['who_are_you']:
+            choices.append(("Who are you? Why are you out here?", 'who_are_you'))
+        
+        choices.append(("Say nothing more.", 'continue'))
+        
+    
+        for i, (text, _) in enumerate(choices, 1):
+            print(f"{i}. {text}")
+        
+        while True:
+            try:
+                choice = int(input("\nChoose wisely: "))
+                if 1 <= choice <= len(choices):
+                    break
+                else:
+                    print("The choice is unavailable. Try again")
+            except ValueError:
+                print("Enter a number please")
+        
+    
+        question_key = choices[choice - 1][1]
+    
+        if question_key == 'continue':
+            break
+        
+    
+        asked_questions[question_key] = True
+        
+       
+        self.clear_screen()
+        
+        if question_key == 'where':
+            self.display_text("""
+"Where am I?"
+
+Renn gestures around the small space. "My home. Well, our home. My sister and I built this treehouse two years ago when we first came to these woods."
+
+He notices your confusion. "We live here. The forest is... safer than you'd think. Once you learn its patterns."
+
+Two years in the woods? By choice?
+
+            """)
+        
+        elif question_key == 'wolves':
+            self.display_text("""
+"What happened to the wolves? After I..."
+
+Your voice trails off. You remember the pain, the darkness. Not much else.
+
+"After you passed out?" Renn finishes. He looks down at his bandaged leg. "I managed to drive them off. Barely. They don't like fire, and I always carry flint."
+
+He pauses. "You bought me the time I needed. If you hadn't come back... I'd be dead. We'd both be dead."
+
+There's weight in his words. Gratitude. Something deeper.
+
+            """)
+        
+        elif question_key == 'why_save':
+            self.display_text("""
+"Why did you save me? You could have left me there."
+
+Renn looks surprised by the question. "Why wouldn't I? You came back for me. Even though you could have run."
+
+He shakes his head. "Besides... I don't think I could live with myself if I had left you there. I have enough on my concious as is."
+
+His expression darkens for a moment. A memory, perhaps. Something painful.
+            """)
+        
+        elif question_key == 'how_long':
+            self.display_text("""
+"Five days?! I've been unconscious for Five days?"
+
+"Five and a half, technically," Renn says. "You lost a lot of blood. My sister had to stitch your shoulder. Your leg too. The wolves really did a number on you."
+
+He gestures to a clay bowl nearby filled with water. "You should drink. You're dehydrated."
+
+Five days. Five days lost. The beast could be anywhere by now. And you had no idea where you were
+            """)
+        
+        elif question_key == 'who_are_you':
+            self.display_text("""
+"Who are you? Why are you out here in the middle of the forest?"
+
+Renn's expression shifts. Guarded. Careful.
+
+"That's... complicated," he says after a moment. "I'm Renn. My sister is Kira. We've been living out here for two years."
+
+"But why—"
+
+"It's not by choice," he interrupts, then stops himself. "Well. Not entirely. Look, it's complicated. And it's not just my story to tell."
+
+He glances upward, as if expecting someone. "Kira will be back soon. She's the one who patched you up. She's... let's just say she's going to have questions."
+
+There's something he's not saying. Something important.
+            """)
+        
+        input("\nPress Enter to continue...")
+    
+    # After all questions, Kira arrives
+    self.kira_arrives()
+
+def kira_arrives(self):
+    self.clear_screen()
+    self.display_text("""
+A sharp whistle cuts through the air. Three short bursts.
+
+Renn's entire body tenses. "That's Kira. She's back."
+
+Before you can ask what that means, a figure climps through the trap door.
+
+She looks like Renn. same sharp features, same dark hair, similar build. But where Renn's eyes hold warmth and concern, hers are ice.
+
+Cold. Calculating. Dangerous.
+
+"You're awake," she says. Her hand rests casually on the knife at her belt.
+
+"Kira, this is—" Renn starts.
+
+"I know enough about who she is" Her eyes never leave you. "A stranger. A danger"
+
+"She saved my life!"
+
+"And I saved hers." Kira's voice is flat. "Tit for tat. Three days of supplies. Three days of medicine. I think we're pretty even"
+
+The accusation hangs in the air.
+    """)
+    
+    input("\nPress Enter to continue...")
+    self.talk_with_kira()
         
  
  #no revenge arc for twin B instead MC never meets them and is riddled with guilt for letting Twin A die alone
