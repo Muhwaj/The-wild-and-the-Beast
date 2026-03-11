@@ -129,6 +129,15 @@ You close your eyes and wait for the imminent attack.
 
 
 
+
+
+
+
+
+
+
+
+
 ---lol sike---
 
 
@@ -483,7 +492,7 @@ Cold. Calculating. Dangerous.
 
 "Kira, this is—" Renn starts.
 
-"I know enough about who she is" Her eyes never leave you. "A stranger. A danger."
+"I know enough who she is" Her eyes never leave you. "A stranger. A danger."
 
 "She saved my life!"
 
@@ -519,7 +528,7 @@ def talk_with_kira(self):
             choices.append(("If you didn't trust me, why save me?", 'why_save'))
         
         if not asked_questions['who_are_you']:
-            choices.append(("Who are you? What are you even doing here?", 'who_are_you'))
+            choices.append(("Who are you guys? What are you even doing here?", 'who_are_you'))
         
         if not asked_questions['not_danger']:
             choices.append(("I'm not a danger to you.", 'not_danger'))
@@ -551,19 +560,19 @@ def talk_with_kira(self):
         if question_key == 'why_hostile':
             self.display_text("""
                               
-"Why are you so hostile? You don't know me. I haven't even done anything besides save your brother's life" you say, albeit a little pointedly
+"Why are you so hostile? You don't know me. I haven't done anything besides save your brother's life" you say, albeit a little pointedly
 
-Kira's mistrust negativity and mistrust towards you was making you a little defensive.
+Kira's mistrust negativity and mistrust was making you a little defensive.
 
 Her expression doesn't change. "Three people have found us before you." she says "And each time we've lived to regret ever helping them"
 
 She counts on her fingers. "One tried to steal our supplies while we slept. One attacked Renn when he was gathering water. One seemed friendly for two weeks, then tried to kill us both."
 
-Her hand tightens on her knife. "So forgive me if I'm not exactly chummy with you at the moment. You saved Renn's life and I saved yours. This should be end of discussion and I would prefer if you left"
+Her hand tightens on her knife. "So forgive me if I'm not exactly chummy with you at the moment. You saved Renn's life and I saved yours. End of discussion and I would prefer if you left"
 
 Renn shifts uncomfortably. "Kira—"
 
-"No." Her voice is steel. "Trust gets you killed out here and I'm not done trusting."
+"No." Her voice is steel. "Trust gets you killed out here and I'm done trusting."
             """)
         
         elif question_key == 'why_save':
@@ -574,11 +583,11 @@ For the first time, Kira's expression shifts. Something flickers in her eyes. Re
 
 "Because Renn begged me to." Her voice is flat. "He dragged you back here half-dead, bleeding everywhere. Said you saved his life."
 
-She glances at her brother. "And I was in a position to say no to him. So I helped you"
+She glances at her brother. "And just because I didn't trust you doesn't mean I wouldn't have repaid the debt of you saving his. "
 
 "Kira, you didn't have to—"
 
-"Yes, I did." She cuts him off. "You're all I have left. If saving some stranger keeps you alive, fine. But that doesn't mean I have to trust them and"
+"Yes, I did." She cuts him off. "You're all I have left. If saving some stranger keeps you alive, fine. But that doesn't mean I have to trust them"
 
 The weight of her words hangs heavy. She's not protecting you. She's protecting Renn.
             """)
@@ -587,15 +596,17 @@ The weight of her words hangs heavy. She's not protecting you. She's protecting 
             self.display_text("""
 "Who are you? What are even you doing out here?"
 
-Kira's jaw tightens. "That's none your business."
+Kira's jaw tightens. "That is none your business."
 
-"Kira," Renn says softly. "They're going to find out eventually. They're injured. They'll be here for days."
+"Kira," Renn says softly. "[......]She's going to find out eventually. [.....]She's injured. She'll be here for days."
 
-"Then they can leave in days. They don't need to know our life story."
+"Then she can leave in days. She doesn't need to know our life story."
 
 But Renn continues anyway. "We're from a village east of here. We were banished two years ago."
 
 You freeze. Banished. Just like you.
+
+Kira glares at Renn but stays silent 
 
 "For what?"
 
@@ -624,17 +635,17 @@ Renn nods. "We were banished for questioning our elders. For noticing they hoard
 
 "Different villages," Kira continues. "Different methods. Same cruelty."
 
-For the first time, she doesn't look at you like a threat. She looks at you like someone who understands.
-            """)
+For the first time, she doesn't look at you like a threat but rather as someone who understands. 
+        """)
         
         input("\nPress Enter to continue...")
     
-    # After all questions, offer the choice
     self.twins_offer_choice()
-    
+        
     def twins_offer_choice(self):
         self.clear_screen()
         self.display_text("""
+        
 The tension in the room has shifted. Kira still watches you carefully.
 
 Renn speaks first. "You're injured. You need time to heal. You can stay here. With us. Until you're strong enough to continue."
@@ -649,9 +660,9 @@ You think about it. Five days unconscious. You're weak. Injured. The beast could
 
 And you weren't big on strangers either. Especially not how Kira kept her knife always ready.
 
-But these two... they were starting to understand. They were cast out just like you. And maybe they won't kill you in your sleep. Not after all that trouble of saving your life and all.
+But these two... they were starting to understand. They were cast out just like you. And maybe they won't kill you in your sleep. 
 
-
+Not after all that trouble of saved your life and all.
 
     """)
     
@@ -678,15 +689,19 @@ Over the next two months, you heal. Your shoulder knits back together. Your leg 
 
 Renn teaches you fighting techniques not taught in your village. Maneuvering a blade in ways you didn't think was possible. 
 
-Kira, slowly warming to you, shows you the forest. Which plants are edible. How to track. How to move silently. How to avoid the giant creatures that roam the deeper woods.
+Kira, slowly warming to you, shows you the forest. Which plants are edible and which are poisonous. She teaches you how to start a fire even in damp conditions and in return
 
-You learn about them too. Renn's optimism. His belief that people can change. His hope.
+You teach them a few things too. How to navigate using stars. How to figure out directions using nothing but the sun's dying rays as it sets.
 
-Kira's pragmatism. Her caution. Her fierce protection of her brother. Her survival instinct.
+You learn about them too. Renn's optimisms and his beliefs. How he misses his family but would never dare go back. 
 
-They become something akin to friends. Not quite. But you can rely on them. 
+Kira's pragmatism and caution. Her fierce protection of her brother. 
 
-The weight never leaves you however. The beast. Your village. Your family. Your mission.
+How she once convinved Renn to go back home but saw their family was surviving just fine without them and going back would jeopardize their safetey so they turned back. 
+
+You wondered if that was something that could happen to you? Is your family doing just fine without you? Would they want you back? even if you did manage the impossible and went back at all
+
+Renn and Kira had become something akin to friends. Not quite. But you can rely on them. 
 
 "I need to keep moving," you tell them one morning, "I need to find the beast."
 
@@ -710,7 +725,7 @@ You're a different person than the one they saved.
 def leave_twins(self):
     self.clear_screen()
     self.display_text("""
-PARTING WAYS
+------------PARTING WAYS--------------------------
 
 "I appreciate the offer," you say. "But I have a task. I can't afford to waste time. I want to get back to my family as soon as possible"
 
@@ -722,15 +737,27 @@ Kira's expression doesn't change, but you see a question in her eyes. The same c
 
 "Stubborn," Kira says. "But honest. I respect that."
 
-Renn hands you supplies. Dried meat. Bandages. A whetstone.
+Renn mumbles something you don't quite catch. Something along the lines of "At least you have a chance to go back"
 
-"For the road. And good luck finding your beast."
+You don't blame him. You at least have a shot at going back home, no matter impossible the task may be. Renn and Kira are stuck out here possibly forever. 
 
-You leave three days later, when you can walk without wincing.
+Renn brings you supplies. Dried meat, bandages and a whetstone.
 
-You momentarily wonder if you should have stayed considering your state. But never mind that you 
+"For the road"
 
-[WRITEEEEEEEEEEEEE MOTREEEEEEEEEEEEEEEEEEEEEEEEEEEEEE]
+Kira hands you a few leaves which you recognise as one of the healing plants she'd shown you earlier. "Have a feeling you might need this"
+
+They help you pack what you need and soon you're ready to start your journey again. 
+
+As you turn to leave, you turn to impulsively pull them both into a hug. 
+
+Renn immdediately returns your hug. Kira freezes but slowly hugs you back as well. 
+
+"Thank you for everything. I really appreciate it"
+
+"You're welcome back anytime" Renn says. Kira nods in agreement. 
+
+You momentarily wonder if you should have stayed. But never mind that. You a mission to complete
 
     """)
     
